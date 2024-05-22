@@ -1,5 +1,7 @@
 ---
+import '../styles/global.css';
 
+const pageTitle = "Blog";
 ---
 
 <html lang="en">
@@ -8,16 +10,9 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{pageTitle}</title>
 	</head>
     <body>
-        <a href="/">Inicio</a>
-        <a href="/about/">Sobre mi</a>
-        <a href="/blog/">Blog</a>    
-        <h1>Mi blog de Astro aprendizaje</h1>
-        <p>Aquí es donde publicaré sobre mi viaje de aprendizaje Astro.</p>
-        ---
-        ---
         <html lang="es">
           <head>
             <meta charset="utf-8"/>
@@ -28,7 +23,7 @@
             <a href="/">Inicio</a>
             <a href="/about/">Sobre mi</a>
             <a href="/blog/">Blog</a>
-        
+            <h1>{pageTitle}</h1>
             <h1>Mi blog de aprendizaje sobre Astro</h1>
             <p>Aquí es donde publicaré acerca de mi viaje aprendiendo Astro./p>
             <ul>
