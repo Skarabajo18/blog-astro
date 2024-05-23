@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: 'Este es mi primer post'
 pubDate: '2024-05-22'
 description: 'Este es la primera publicación en astro jeje.'

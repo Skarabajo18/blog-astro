@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
 const pageTitle = "Sobre miiii";
 
@@ -22,28 +23,19 @@ const fontWeight = "bold";
 const textCase = "uppercase";
 
 ---
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-        <title>{pageTitle}</title>
-        <style define:vars={{skillColor, fontWeight, textCase}}>
-            h1 {
-              color: purple;
-              font-size: 4rem;
-            }
-            .skill {
-              color: var(--skillColor);
-              font-weight: var(--fontWeight);
-              text-transform: var(--textCase);
-            }
-          </style>
-	</head>
-    <body>
-		<Navigation /> 
-        <h1>{pageTitle}</h1>
+<BaseLayout pageTitle={pageTitle}>
+<style define:vars={{skillColor, fontWeight, textCase}}>
+  h1 {
+    color: purple;
+    font-size: 4rem;
+  }
+  .skill {
+    color: var(--skillColor);
+    font-weight: var(--fontWeight);
+    text-transform: var(--textCase);
+  }
+</style>
+  <body>
         <p>He aquí algunos datos sobre mí:</p>
         <ul>
           <li>Me llamo {identity.firstName}.</li>
@@ -62,6 +54,6 @@ const textCase = "uppercase";
         {finished && <p>¡He terminado este tutorial!</p>}
 
         {goal === 3 ? <p>Mi objetivo es terminar en 3 días.</p> : <p>Mi objetivo no son 3 días.</p>}
-        <Footer/>    
     </body>
-</html>
+</BaseLayout>
+
