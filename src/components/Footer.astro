@@ -2,16 +2,44 @@
 
 import Social from './Social.astro';
 ---
-<style>
-  footer {
-    display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
-  }
-</style>
-<footer>
-  <Social platform="twitter" username="astrodotbuild" />
-  <Social platform="github" username="withastro" />
-  <Social platform="youtube" username="astrodotbuild" />
-</footer>
+<head>
 
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .content {
+      flex: 1;
+    }
+
+    footer {
+      display: flex;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <!-- Contenido de la página -->
+  </div>
+  <footer class="bg-zinc-50 text-center dark:bg-gray-800 lg:text-left">
+    <div class="bg-gray-800 p-4 text-center text-surface dark:text-white">
+      <Social platform="twitter" username="astrodotbuild" />
+      <Social platform="github" username="withastro" />
+      <Social platform="youtube" username="astrodotbuild" />
+    </div>
+  </footer>
+  
+</body>
+</html>
