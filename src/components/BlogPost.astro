@@ -28,10 +28,13 @@ const { title, details, url } = Astro.props;
     
 </style>
 
-<div class="card">
-  <div class="card-details">
-    <p class="text-title">{title}</p>
-    <p class="text-body">{details}</p>
+
+
+<a href={url}>
+  <div class="card">
+    <div class="card-details">
+      <p  class="text-title">{title}</p>
+      <p class="text-body">{details}</p>
+    </div>
   </div>
-  <a href={url} class="card-button">Leer aquí</a>
-</div>
+</a>
