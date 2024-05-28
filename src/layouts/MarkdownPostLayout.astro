@@ -23,6 +23,18 @@ const { frontmatter } = Astro.props;
     color: #00539F;
   }
 
+  p {
+  color: #00539F;
+  transition: color 0.3s ease, background-color 0.3s ease; /* Transiciones suaves */
+}
+
+p:hover {
+  color: #ff5733; /* Cambiar color al pasar el ratón */
+  background-color: #e0f7fa; /* Cambiar fondo al pasar el ratón */
+}
+
+
+
   .tags {
     display: flex;
     flex-wrap: wrap;
@@ -35,5 +47,6 @@ const { frontmatter } = Astro.props;
     padding: .5em 1em;
     font-size: 1.15em;
     background-color: #F8FCFD;
+
   }
 </style>

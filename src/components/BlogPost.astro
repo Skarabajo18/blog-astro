@@ -1,4 +1,37 @@
 ---
-const { title, url } = Astro.props;
+const { title, details, url } = Astro.props;
 ---
-<li><a href={url}>{title}</a></li>
+<style>
+
+
+
+    .text-title {
+      color: aliceblue;
+    }
+    .card-button{
+      color: rgb(39, 150, 247);
+    }
+    .card-details {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  
+    .card {
+      margin: 0.25em;
+      border: dotted 1px #a1a1a1;
+      border-radius: .5em;
+      padding: .5em 1em;
+      font-size: 1.15em;
+      background-color: #1f2937;
+    }
+
+    
+</style>
+
+<div class="card">
+  <div class="card-details">
+    <p class="text-title">{title}</p>
+    <p class="text-body">{details}</p>
+  </div>
+  <a href={url} class="card-button">Leer aquí</a>
+</div>
