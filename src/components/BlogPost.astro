@@ -8,9 +8,7 @@ const { title, details, url } = Astro.props;
     .text-title {
       color: aliceblue;
     }
-    .card-button{
-      color: rgb(39, 150, 247);
-    }
+  
     .card-details {
       display: flex;
       flex-wrap: wrap;
@@ -24,8 +22,11 @@ const { title, details, url } = Astro.props;
       font-size: 1.15em;
       background-color: #1f2937;
     }
+    .card:hover{
+      border-color: #3c454a;
+      background-color: #151b24;
 
-    
+    }
 </style>
 
 
