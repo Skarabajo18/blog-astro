@@ -4,7 +4,7 @@ title: Hola mundo esto es un titulo
 author: Felipe Segovia
 description: "Esta entrada aparecerá sola!"
 image:
-  url: "https://docs.astro.build/default-og-image.png"
+  url: "https://docs.astro.build/assets/full-logo-light.png"
   alt: "La palabra 'astro' contra una ilustración de planetas y estrellas."
 pubDate: 2024-05-23
 tags: ["astro", "éxitos"]

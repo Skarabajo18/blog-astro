@@ -26,7 +26,7 @@ h1 h2 h3 h4 h5 h6 {
 
 /*buscador*/
 
-/* this is a recreation of twitter search in css */
+
 .form {
   --input-text-color: #fff;
   --input-bg-color: #283542;
@@ -36,8 +36,9 @@ h1 h2 h3 h4 h5 h6 {
   --width-of-input: 200px;
   --inline-padding-of-input: 1.2em;
   --gap: 0.9rem;
+
 }
-/* form style */
+
 .form {
   font-size: 0.9rem;
   display: flex;
@@ -46,20 +47,21 @@ h1 h2 h3 h4 h5 h6 {
   width: var(--width-of-input);
   position: relative;
   isolation: isolate;
+  
 }
-/* a fancy bg for showing background and border when focus. */
+
 .fancy-bg {
   position: absolute;
   width: 100%;
   inset: 0;
   background: var(--input-bg-color);
-  border-radius: 30px;
+  border-radius: 8px;
   height: 100%;
   z-index: -1;
   pointer-events: none;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
-/* label styling */
+
 label {
   width: 100%;
   padding: 0.8em;
@@ -72,17 +74,14 @@ label {
 .search,.close-btn {
   position: absolute;
 }
-/* styling search-icon */
 .search {
   fill: var(--text-color);
   left: var(--inline-padding-of-input);
 }
-/* svg -- size */
 svg {
   width: 17px;
   display: block;
 }
-/* styling of close button */
 .close-btn {
   border: none;
   right: var(--inline-padding-of-input);
@@ -99,7 +98,7 @@ svg {
   opacity: 0;
   visibility: hidden;
 }
-/* styling of input */
+
 .input {
   color: var(--input-text-color);
   width: 100%;

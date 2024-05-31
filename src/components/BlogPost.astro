@@ -1,37 +1,90 @@
 ---
-const { title, details, url } = Astro.props;
+const { title, details, url, tags = [], image } = Astro.props;
+const defaultImage = {
+  url: "https://docs.astro.build/default-og-image.png",
+  alt: "Imagen genérica"
+};
+const imageUrl = image?.url || defaultImage.url;
+const imageAlt = image?.alt || defaultImage.alt;
 ---
 <style>
     .text-title {
       color: aliceblue;
     }
-  
-    .card-details {
-      display: flex;
-      flex-wrap: wrap;
-    }
-  
+
     .card {
+      display: flex;
+      flex-direction: column;
       margin: 0.25em;
       border: dotted 1px #a1a1a1;
-      border-radius: .5em;
+      border-radius: 4px;
       padding: .5em 1em;
       font-size: 1.15em;
       background-color: #1f2937;
     }
-    .card:hover{
-      border-color: #3c454a;
+    .card:hover {
+      border-color: #1b9bee;
       background-color: #151b24;
+    }
 
+    .card-image {
+      margin-bottom: 1em;
+    }
+    .card-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+
+    .card-details {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5em;
+      margin-top: 0.5em;
+    }
+    .tag {
+      background-color: #283542;
+      border-radius: 4px;
+      padding: 0.2em 0.5em;
+      color: #1b9bee;
+    }
+
+    @media (min-width: 600px) {
+      .card {
+        flex-direction: row;
+        align-items: flex-start;
+      }
+      .card-image {
+        margin-right: 1em;
+        margin-bottom: 0;
+      }
+      .card-image img {
+        max-width: 150px;
+      }
+      .card-details {
+        flex: 1;
+      }
     }
 </style>
 
-
-
 <a href={url}>
   <div class="card">
+    <div class="card-image">
+      <img src={imageUrl} alt={imageAlt} />
+    </div>
     <div class="card-details">
-      <p  class="text-title">{title}</p>
+      <p class="text-title">{title}</p>
+      <div class="card-tags">
+        {tags.length > 0 && tags.map((tag) => (
+          <span class="tag">{tag}</span>
+        ))}
+      </div>
       <p class="text-body">{details}</p>
     </div>
   </div>
